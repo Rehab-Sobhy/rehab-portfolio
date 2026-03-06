@@ -178,7 +178,7 @@ document.querySelector('#app').innerHTML = `
     </div>
     <div class="hero-visual reveal reveal-right">
       <div class="hero-image-container">
-        <img src="${base}/rehab.png" alt="Rehab Sobhy">
+        <img src="${base}/rehab.jpg" alt="Rehab Sobhy">
       </div>
     </div>
   </section>
