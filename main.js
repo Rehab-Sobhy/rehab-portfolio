@@ -5,6 +5,22 @@ const base = isProd ? '/rehab-portfolio' : '';
 
 const projects = [
   {
+    title: "Therap Splasher",
+    category: "Health & Medicine",
+    description: "A medicine reminder app using SQLite, local notifications, and AdMob. Managed medications with timed alerts.",
+    image: `${base}/therapy.png`,
+    figma: "https://play.google.com/store/apps/details?id=com.Splacher.Therapy",
+    tags: ["Flutter", "SQLite", "Firebase", "AdMob"]
+  },
+  {
+    title: "Meals Splasher",
+    category: "Restaurant & E-commerce",
+    description: "A complete e-commerce restaurant app with a modern UI/UX design developed to handle meals and orders effectively.",
+    image: `${base}/meals_splasher.jpg`,
+    figma: "#",
+    tags: ["Flutter", "UI/UX", "API Integration"]
+  },
+  {
     title: "Dawag",
     category: "Fashion E-commerce",
     description: "A premium lifestyle shopping experience with elegant Arabic UI and seamless navigation for modern shoppers.",
@@ -51,6 +67,85 @@ const skills = [
   "REST API", "Dio", "Hive", "SqfLite", "Git", "OOP", "Solid Principles"
 ];
 
+const experiences = [
+  {
+    role: "Flutter Developer (Full Time)",
+    company: "Programming Waterfall",
+    period: "08/2025 – Present",
+    location: "Minia",
+    points: [
+      "Full-Time Flutter Developer working on 6+ production mobile apps.",
+      "Developed UI, integrated APIs, and used Firebase services.",
+      "Focused on performance, clean code, and timely delivery."
+    ],
+    link: null
+  },
+  {
+    role: "Flutter Developer",
+    company: "App Splasher",
+    period: "08/2024 – 02/2026",
+    location: "",
+    points: [
+      "Developed a complete e-commerce app with a modern UI/UX mockup that received excellent client feedback.",
+      "Created \"Therapy Splasher\", a medicine reminder app using SQLite, local notifications, and Google AdMob.",
+      "Successfully published on Google Play."
+    ],
+    link: { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.Splacher.Therapy" }
+  },
+  {
+    role: "RCT – Freelancing",
+    company: "Real Estate Application",
+    period: "07/2024 – 09/2024",
+    location: "",
+    points: [
+      "Contributed to RCT: house design selection, order placement, push notifications, file downloads, investment sections, and online payment."
+    ],
+    link: { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.rct.app" }
+  },
+  {
+    role: "RCT V2 – Freelancing",
+    company: "Real Estate Application (Enhanced)",
+    period: "01/2025 – 05/2025",
+    location: "",
+    points: [
+      "Built full multi-vendor store structure with order management, invoices, advanced filtering, and integrated payment & notification systems."
+    ],
+    link: { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.rct.app" }
+  },
+  {
+    role: "Erkenha (اركها) – Freelancing",
+    company: "Smart Car Parking App",
+    period: "02/2025 – 05/2025",
+    location: "",
+    points: [
+      "Built Erkenha: users can view available parking spaces, receive real-time notifications, and upload & manage car details."
+    ],
+    link: null
+  },
+  {
+    role: "Flutter Developer Intern",
+    company: "TEKNOSOFT",
+    period: "",
+    location: "",
+    points: [
+      "Developed a complete mobile application during the internship, handling the full development lifecycle from UI to deployment.",
+      "Gained hands-on experience with widgets, state management, and API integration."
+    ],
+    link: { label: "GitHub", url: "https://github.com/Rehab-Sobhy/Complete-Ecommerce-App" }
+  },
+  {
+    role: "Flutter Instructor",
+    company: "GDG Minia",
+    period: "12/2022 – 12/2025",
+    location: "Minia",
+    points: [
+      "Taught Flutter & Dart fundamentals and practical app development.",
+      "Mentored students and guided them in building real Flutter applications."
+    ],
+    link: null
+  }
+];
+
 document.querySelector('#app').innerHTML = `
   <div class="blob" style="top: 10%; left: 10%;"></div>
   <div class="blob" style="bottom: 10%; right: 10%; background: radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%);"></div>
@@ -61,6 +156,7 @@ document.querySelector('#app').innerHTML = `
       <ul>
         <li><a href="#hero">Home</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -125,6 +221,39 @@ document.querySelector('#app').innerHTML = `
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 18l10-5-10-5-10 5 10 5z"/></svg>
           </div>
           <span style="font-weight: 600;">${skill}</span>
+        </div>
+      `).join('')}
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="reveal reveal-up">
+      <span class="section-tag">Career</span>
+      <h2>Professional Experience</h2>
+    </div>
+    <div class="timeline">
+      ${experiences.map((exp, i) => `
+        <div class="timeline-item reveal ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'} reveal-delay-${(i % 3) + 1}">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">${exp.role}</h3>
+                <span class="exp-company">${exp.company}</span>
+              </div>
+              <div class="exp-meta">
+                ${exp.period ? `<span class="exp-period">${exp.period}</span>` : ''}
+                ${exp.location ? `<span class="exp-location">${exp.location}</span>` : ''}
+              </div>
+            </div>
+            <ul class="exp-points">
+              ${exp.points.map(pt => `<li>${pt}</li>`).join('')}
+            </ul>
+            ${exp.link ? `<a href="${exp.link.url}" target="_blank" class="exp-link">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/></svg>
+              ${exp.link.label}
+            </a>` : ''}
+          </div>
         </div>
       `).join('')}
     </div>
