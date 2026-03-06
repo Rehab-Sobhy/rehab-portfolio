@@ -178,7 +178,8 @@ document.querySelector('#app').innerHTML = `
     </div>
     <div class="hero-visual reveal reveal-right">
       <div class="hero-image-container">
-        <img src="${base}/rehab.jpg" alt="Rehab Sobhy">
+        <img src="${base}/rehab.jpg" alt="Rehab Sobhy" class="hero-img active">
+        <img src="${base}/rehab2.png" alt="Rehab Sobhy" class="hero-img hidden">
       </div>
     </div>
   </section>
@@ -299,9 +300,21 @@ document.addEventListener('mousemove', (e) => {
   const blobs = document.querySelectorAll('.blob');
   const x = e.clientX / window.innerWidth;
   const y = e.clientY / window.innerHeight;
-
   blobs.forEach((blob, index) => {
     const factor = (index + 1) * 20;
     blob.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
   });
 });
+
+// Hero Image Toggle Logic
+const toggleHeroImage = () => {
+  const images = document.querySelectorAll('.hero-img');
+  if (images.length < 2) return;
+
+  images.forEach(img => {
+    img.classList.toggle('hidden');
+    img.classList.toggle('active');
+  });
+};
+
+setInterval(toggleHeroImage, 4000);
