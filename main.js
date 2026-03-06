@@ -113,7 +113,7 @@ const experiences = [
     link: { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.rct.app" }
   },
   {
-    role: "Erkenha (اركها) – Freelancing",
+    role: "Erkenha (اركنها) – Freelancing",
     company: "Smart Car Parking App",
     period: "02/2025 – 05/2025",
     location: "",
@@ -184,7 +184,7 @@ document.querySelector('#app').innerHTML = `
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects">ك
     <div class="reveal reveal-up">
       <span class="section-tag">Portfolio</span>
       <h2>Featured Projects</h2>
