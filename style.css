@@ -150,7 +150,8 @@ nav a:hover {
     border: 1px solid var(--glass-border);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
     z-index: 2;
-    background: var(--bg-card); /* Background while images load */
+    background: var(--bg-card);
+    /* Background while images load */
 }
 
 .hero-image-container img {
@@ -161,16 +162,9 @@ nav a:hover {
     height: 100%;
     object-fit: cover;
     transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 1;
 }
 
-.hero-image-container img.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(1.1);
-}
-
-.hero-image-container:hover img:not(.hidden) {
+.hero-image-container:hover img {
     transform: scale(1.04);
 }
 

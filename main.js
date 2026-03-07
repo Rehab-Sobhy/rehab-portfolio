@@ -178,13 +178,12 @@ document.querySelector('#app').innerHTML = `
     </div>
     <div class="hero-visual reveal reveal-right">
       <div class="hero-image-container">
-        <img src="${base}/rehab.jpg" alt="Rehab Sobhy" class="hero-img active">
-        <img src="${base}/rehab2.png" alt="Rehab Sobhy" class="hero-img hidden">
+        <img src="${base}/rehab2.png" alt="Rehab Sobhy" class="hero-img active">
       </div>
     </div>
   </section>
 
-  <section id="projects">ك
+  <section id="projects">
     <div class="reveal reveal-up">
       <span class="section-tag">Portfolio</span>
       <h2>Featured Projects</h2>
@@ -306,15 +305,4 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-// Hero Image Toggle Logic
-const toggleHeroImage = () => {
-  const images = document.querySelectorAll('.hero-img');
-  if (images.length < 2) return;
 
-  images.forEach(img => {
-    img.classList.toggle('hidden');
-    img.classList.toggle('active');
-  });
-};
-
-setInterval(toggleHeroImage, 4000);
