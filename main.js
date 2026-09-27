@@ -22,27 +22,14 @@ const projects = [
     title: "Thiqah HR (ثقة HR)",
     category: "Enterprise",
     categoryLabel: "Enterprise & HR",
-    badge: "Featured Project",
+    badge: "Google Play",
     description: "A modern employee self-service and HR management platform providing attendance tracking, leave requests, employee profiles, and instant notifications.",
     fullDescription: "Thiqah HR is a robust enterprise mobile solution developed to streamline human resource workflows. It provides employees with seamless access to check-in/out records, leave request submissions, payroll summaries, and company announcements with real-time push notifications.",
     image: `${base}/theka_hr.png`,
-    figma: "#",
+    link: "https://play.google.com/store/apps/details?id=com.moarafat.thekahr",
+    figma: "https://play.google.com/store/apps/details?id=com.moarafat.thekahr",
     tags: ["Flutter", "BLoC Architecture", "Dio REST API", "Firebase Messaging"],
-    highlights: ["Attendance & Leave Management", "Role-Based Access Control", "Push Notification Service", "Clean Architecture & MVVM"]
-  },
-  {
-    id: "therapy-splasher",
-    title: "Therapy Splasher",
-    category: "Health",
-    categoryLabel: "Health & Medicine",
-    badge: "Google Play",
-    description: "A smart medicine reminder mobile app using SQLite, local notifications, and Google AdMob to help users track medication schedules accurately.",
-    fullDescription: "Therapy Splasher is a live Google Play application designed for health tracking. Users can add, edit, and delete medications with exact timed alarm notifications, ensuring timely dosage reminders with reliable local database persistence.",
-    image: `${base}/therapy.png`,
-    link: "https://play.google.com/store/apps/details?id=com.Splacher.Therapy",
-    figma: "https://play.google.com/store/apps/details?id=com.Splacher.Therapy",
-    tags: ["Flutter", "SQLite", "Local Notifications", "AdMob"],
-    highlights: ["Published on Google Play", "Offline Persistence (SQLite)", "Scheduled Timed Notifications", "AdMob Monetization Integration"]
+    highlights: ["Published on Google Play", "Attendance & Leave Management", "Role-Based Access Control", "Push Notification Service"]
   },
   {
     id: "rct-v2",
@@ -175,10 +162,9 @@ const experiences = [
     badge: "Key Apps",
     points: [
       "Developed complete e-commerce mobile application with modern UI/UX mockups.",
-      "Created \"Therapy Splasher\", a medicine reminder app using SQLite, local notifications, and Google AdMob.",
       "Successfully published apps on Google Play."
     ],
-    link: { label: "Google Play Store", url: "https://play.google.com/store/apps/details?id=com.Splacher.Therapy" }
+    link: null
   },
   {
     role: "RCT – Freelancing",
@@ -239,13 +225,7 @@ const experiences = [
   }
 ];
 
-const avatarImages = [
-  `${base}/rehab2.jpg`,
-  `${base}/rehab.jpg`,
-  `${base}/rehab2.png`
-];
-
-let currentAvatarIndex = 0;
+const avatarImage = `${base}/rehab2.jpg`;
 
 function renderApp() {
   document.querySelector('#app').innerHTML = `
@@ -291,16 +271,12 @@ function renderApp() {
 
           <div class="hero-stats">
             <div class="stat-card">
-              <span class="stat-number">6+</span>
-              <span class="stat-label">Production Apps</span>
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Applications Developed</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number">2+</span>
+              <span class="stat-number">3+</span>
               <span class="stat-label">Google Play Apps</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">GDG</span>
-              <span class="stat-label">Flutter Mentor</span>
             </div>
           </div>
 
@@ -320,12 +296,7 @@ function renderApp() {
           <div class="hero-image-wrapper">
             <div class="glow-ring"></div>
             <div class="hero-image-container">
-              <img id="avatar-img" src="${avatarImages[0]}" alt="Rehab Sobhy - Flutter Developer">
-            </div>
-            <div class="avatar-controls">
-              ${avatarImages.map((_, idx) => `
-                <button class="avatar-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Photo ${idx + 1}"></button>
-              `).join('')}
+              <img id="avatar-img" src="${avatarImage}" alt="Rehab Sobhy - Flutter Developer">
             </div>
             <div class="floating-badge badge-1">
               <div class="fb-icon">📱</div>
@@ -567,23 +538,6 @@ function initInteractivity() {
     });
   });
 
-  // Avatar Image Switcher
-  const avatarImg = document.getElementById('avatar-img');
-  const avatarDots = document.querySelectorAll('.avatar-dot');
-
-  avatarDots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-      const idx = parseInt(e.target.dataset.index);
-      currentAvatarIndex = idx;
-      avatarDots.forEach(d => d.classList.remove('active'));
-      dot.classList.add('active');
-      avatarImg.style.opacity = '0';
-      setTimeout(() => {
-        avatarImg.src = avatarImages[idx];
-        avatarImg.style.opacity = '1';
-      }, 300);
-    });
-  });
 
   // Typing Effect in Hero
   const titles = [
