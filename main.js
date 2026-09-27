@@ -275,7 +275,7 @@ function renderApp() {
               <span class="stat-label">Applications Developed</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number">3+</span>
+              <span class="stat-number">7+</span>
               <span class="stat-label">Google Play Apps</span>
             </div>
           </div>
