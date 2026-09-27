@@ -242,7 +242,7 @@ const experiences = [
 const avatarImages = [
   `${base}/rehab2.jpg`,
   `${base}/rehab.jpg`,
-  `${base}/rehab3.jpg`
+  `${base}/rehab2.png`
 ];
 
 let currentAvatarIndex = 0;
