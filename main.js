@@ -225,7 +225,7 @@ const experiences = [
   }
 ];
 
-const avatarImage = `${base}/rehab2.jpg`;
+const avatarImage = `${base}/rehab2.png `;
 
 function renderApp() {
   document.querySelector('#app').innerHTML = `
